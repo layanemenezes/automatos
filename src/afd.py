@@ -17,7 +17,7 @@ class AFD:
 		print('Estado Inicial -> \'{0}\''.format(self.initial_state))
 		print("Conjunto de Estados Finais (F) -> {0}".format(self.final_states))
 
-		print("Transições:")
+		print("\n### Transições:\n")
 		for state in self.states:
 			print("{0} -> {1}".format(state, self.transitions[state]))
 

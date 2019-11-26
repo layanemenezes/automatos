@@ -21,7 +21,6 @@ class AFDMinimizer:
 			st_lists[st_pair] = []
 			st_mark[st_pair] = ''
 
-
 		for st_pair in st_pairs:
 			count_finals = 0
 
@@ -103,7 +102,12 @@ class AFDMinimizer:
 				try:
 					new_afd.insert_transition(origin, dest, symbol)
 				except:
-					pass
+
+					aux_keys = st_mark.keys()
+
+					for kk in aux_keys:
+						if st_mark[kk] == '' and kk[1] == dest:
+							new_afd.insert_transition(origin, kk[0], symbol)
 
 		return new_afd
 
